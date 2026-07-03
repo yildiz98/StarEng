@@ -2,34 +2,161 @@
 <html lang="tr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#102a43">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>StarEng</title>
-  <link rel="manifest" href="./manifest.json">
-  <link rel="stylesheet" href="./style.css">
+  <meta name="description" content="A1 ve A2 İngilizce kelime öğrenme uygulaması">
+  <meta name="theme-color" content="#0b1f3a">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header><div class="brand">★ StarEng</div><div id="score">Puan: 0</div></header>
-<main>
-<section id="home" class="screen active">
-  <div class="hero"><span class="badge">A1 • A2 İngilizce</span><h1>Öğren. Cümle kur. Test et.</h1>
-  <p>Kelime kartları, örnek cümleler ve kısa testlerle adım adım ilerle.</p></div>
-  <div class="grid">
-    <button onclick="openLearn('A1')"><b>A1 Kelime Öğren</b><span>Temel kelimeler</span></button>
-    <button onclick="openLearn('A2')"><b>A2 Kelime Öğren</b><span>Günlük kullanım</span></button>
-    <button onclick="openQuiz('A1')"><b>A1 Test</b><span>Bilgini ölç</span></button>
-    <button onclick="openQuiz('A2')"><b>A2 Test</b><span>Kendini geliştir</span></button>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="logo">
+        <span class="logo-star">★</span>
+        <span>StarEng</span>
+      </div>
+      <span class="level-pill">A1 • A2</span>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-text">
+          <span class="mini-title">İngilizce Öğrenme Paneli</span>
+          <h1>Kelime öğren, cümlede gör, test ile pekiştir.</h1>
+          <p>
+            Bu ilk sürüm sadece sayfa yapısı ve tasarım iskeletidir.
+            A1 ve A2 soru havuzları daha sonra ayrı dosyalar olarak eklenecek.
+          </p>
+          <div class="hero-actions">
+            <button class="primary-btn" onclick="showPage('learn')">Başla</button>
+            <button class="ghost-btn" onclick="showPage('levels')">Seviye Seç</button>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="progress-ring">0%</div>
+          <h2>Bugünkü Hedef</h2>
+          <p>10 kelime öğren • 5 cümle incele • 1 mini test çöz</p>
+        </div>
+      </section>
+
+      <section id="home" class="page active">
+        <div class="section-title">
+          <h2>Ana Menü</h2>
+          <p>StarQuiz’ten tamamen ayrı, temiz StarEng yapısı.</p>
+        </div>
+
+        <div class="menu-grid">
+          <button class="menu-card" onclick="showPage('learn')">
+            <span>📘</span>
+            <h3>Kelime Öğren</h3>
+            <p>A1 ve A2 kelime kartları burada olacak.</p>
+          </button>
+
+          <button class="menu-card" onclick="showPage('sentences')">
+            <span>💬</span>
+            <h3>Cümle İçinde Kullanım</h3>
+            <p>Kelimelerin örnek cümleleri burada gösterilecek.</p>
+          </button>
+
+          <button class="menu-card" onclick="showPage('quiz')">
+            <span>🎯</span>
+            <h3>Mini Test</h3>
+            <p>Soru havuzu eklendiğinde testler burada çalışacak.</p>
+          </button>
+
+          <button class="menu-card" onclick="showPage('progress')">
+            <span>📊</span>
+            <h3>İlerleme</h3>
+            <p>Puan, seviye ve öğrenme durumu burada takip edilecek.</p>
+          </button>
+        </div>
+      </section>
+
+      <section id="levels" class="page">
+        <button class="back-btn" onclick="showPage('home')">← Ana Menü</button>
+        <div class="section-title">
+          <h2>Seviye Seçimi</h2>
+          <p>İlk etapta tasarım hazırlandı. İçerikler daha sonra yüklenecek.</p>
+        </div>
+
+        <div class="level-grid">
+          <div class="level-card">
+            <span class="level-badge">A1</span>
+            <h3>Başlangıç</h3>
+            <p>Temel kelimeler, günlük ifadeler ve basit cümleler.</p>
+            <button onclick="setLevel('A1')">A1 Seç</button>
+          </div>
+          <div class="level-card">
+            <span class="level-badge">A2</span>
+            <h3>Temel Üstü</h3>
+            <p>Günlük konuşma, kısa metinler ve anlam pekiştirme.</p>
+            <button onclick="setLevel('A2')">A2 Seç</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="learn" class="page">
+        <button class="back-btn" onclick="showPage('home')">← Ana Menü</button>
+        <div class="study-card">
+          <span class="status-label">Kelime Kartı</span>
+          <h2>İçerik yakında yüklenecek</h2>
+          <p>A1 ve A2 kelime havuzunu yüklediğimizde burada kelime, anlam ve okunuş kartları görünecek.</p>
+          <div class="placeholder-row">
+            <button disabled>← Önceki</button>
+            <button disabled>Sonraki →</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="sentences" class="page">
+        <button class="back-btn" onclick="showPage('home')">← Ana Menü</button>
+        <div class="study-card">
+          <span class="status-label">Cümle Kullanımı</span>
+          <h2>Örnek cümle alanı hazır</h2>
+          <p>Her kelime için İngilizce örnek cümle ve Türkçe karşılığı burada gösterilecek.</p>
+          <div class="sentence-box">
+            <b>Example sentence will appear here.</b>
+            <span>Türkçe karşılığı burada yer alacak.</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="quiz" class="page">
+        <button class="back-btn" onclick="showPage('home')">← Ana Menü</button>
+        <div class="study-card">
+          <span class="status-label">Mini Test</span>
+          <h2>Soru havuzu bekleniyor</h2>
+          <p>Şimdilik test motoru pasif. A1 ve A2 soru dosyaları eklenince aktif hale getirilecek.</p>
+          <div class="answer-list">
+            <button disabled>Seçenek A</button>
+            <button disabled>Seçenek B</button>
+            <button disabled>Seçenek C</button>
+            <button disabled>Seçenek D</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="progress" class="page">
+        <button class="back-btn" onclick="showPage('home')">← Ana Menü</button>
+        <div class="section-title">
+          <h2>İlerleme Paneli</h2>
+          <p>Kullanıcı ilerlemesi ileride local kayıt veya Firebase ile bağlanabilir.</p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card"><b>0</b><span>Öğrenilen Kelime</span></div>
+          <div class="stat-card"><b>0</b><span>Çözülen Test</span></div>
+          <div class="stat-card"><b>0</b><span>Toplam Puan</span></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>StarEng V1 UI</span>
+      <span>Hazırlayan: PM. Hüseyin YILDIZ</span>
+    </footer>
   </div>
-</section>
-<section id="learn" class="screen">
-  <button class="back" onclick="goHome()">← Ana Sayfa</button>
-  <div class="card"><div id="level"></div><h2 id="word"></h2><h3 id="meaning"></h3><p id="sentence"></p><p id="translation"></p>
-  <div class="actions"><button onclick="prevWord()">←</button><button onclick="nextWord()">Sonraki →</button></div></div>
-</section>
-<section id="quiz" class="screen">
-  <button class="back" onclick="goHome()">← Ana Sayfa</button>
-  <div class="card"><div id="qlevel"></div><h2 id="question"></h2><div id="answers"></div><p id="feedback"></p><button id="nextQ" onclick="nextQuestion()">Sonraki Soru</button></div>
-</section>
-</main>
-<script src="./data-a1.js"></script><script src="./data-a2.js"></script><script src="./app.js"></script>
-</body></html>
+
+  <script src="app.js"></script>
+</body>
+</html>
