@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#102a43">
+  <title>StarEng</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header><div class="brand">★ StarEng</div><div id="score">Puan: 0</div></header>
+<main>
+<section id="home" class="screen active">
+  <div class="hero"><span class="badge">A1 • A2 İngilizce</span><h1>Öğren. Cümle kur. Test et.</h1>
+  <p>Kelime kartları, örnek cümleler ve kısa testlerle adım adım ilerle.</p></div>
+  <div class="grid">
+    <button onclick="openLearn('A1')"><b>A1 Kelime Öğren</b><span>Temel kelimeler</span></button>
+    <button onclick="openLearn('A2')"><b>A2 Kelime Öğren</b><span>Günlük kullanım</span></button>
+    <button onclick="openQuiz('A1')"><b>A1 Test</b><span>Bilgini ölç</span></button>
+    <button onclick="openQuiz('A2')"><b>A2 Test</b><span>Kendini geliştir</span></button>
+  </div>
+</section>
+<section id="learn" class="screen">
+  <button class="back" onclick="goHome()">← Ana Sayfa</button>
+  <div class="card"><div id="level"></div><h2 id="word"></h2><h3 id="meaning"></h3><p id="sentence"></p><p id="translation"></p>
+  <div class="actions"><button onclick="prevWord()">←</button><button onclick="nextWord()">Sonraki →</button></div></div>
+</section>
+<section id="quiz" class="screen">
+  <button class="back" onclick="goHome()">← Ana Sayfa</button>
+  <div class="card"><div id="qlevel"></div><h2 id="question"></h2><div id="answers"></div><p id="feedback"></p><button id="nextQ" onclick="nextQuestion()">Sonraki Soru</button></div>
+</section>
+</main>
+<script src="./data-a1.js"></script><script src="./data-a2.js"></script><script src="./app.js"></script>
+</body></html>

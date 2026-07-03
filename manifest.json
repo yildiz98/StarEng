@@ -1,0 +1,9 @@
+{
+  "name": "StarEng",
+  "short_name": "StarEng",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#071a2f",
+  "theme_color": "#102a43",
+  "icons": []
+}
