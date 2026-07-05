@@ -1,1 +1,44 @@
-<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>StarEng</title><link rel="stylesheet" href="style.css"></head><body><header><b>★ StarEng</b><span>A1 • Ders 1</span></header><main><section id="home"><div class="hero"><small>A1 BAŞLANGIÇ</small><h1>İlk 10 kelimeyle başla.</h1><p>İnsanlar ve aile kategorisindeki temel kelimeleri örnek cümlelerle öğren.</p><button onclick="startLesson()">Derse Başla</button></div></section><section id="study" hidden><button class="back" onclick="goHome()">← Ana Sayfa</button><div class="card"><div class="meta"><span id="count"></span><span>Ders 1</span></div><h2 id="word"></h2><h3 id="meaning"></h3><div class="sentence"><b id="sentence"></b><span id="translation"></span></div><div class="actions"><button onclick="prevWord()">← Önceki</button><button onclick="markLearned()">✓ Öğrendim</button><button onclick="nextWord()">Sonraki →</button></div><p id="status"></p></div></section></main><footer>StarEng • A1 Ders 1 • 10 Kelime</footer><script src="data/lesson-01.js"></script><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>StarEng</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><b>★ StarEng</b><span>A1 • Ders 1</span></header>
+<main>
+<section id="home">
+  <div class="hero">
+    <small>A1 BAŞLANGIÇ</small>
+    <h1>İlk 10 kelimeyle başla.</h1>
+    <p>İnsanlar ve aile kategorisindeki temel kelimeleri örnek cümlelerle öğren.</p>
+    <button onclick="startLesson()">Derse Başla</button>
+  </div>
+</section>
+
+<section id="study" hidden>
+  <button class="back" onclick="goHome()">← Ana Sayfa</button>
+  <div class="card">
+    <div class="meta"><span id="count"></span><span>Ders 1</span></div>
+    <h2 id="word"></h2>
+    <h3 id="meaning"></h3>
+    <div class="sentence">
+      <b id="sentence"></b>
+      <span id="translation"></span>
+    </div>
+    <div class="actions">
+      <button onclick="prevWord()">← Önceki</button>
+      <button onclick="markLearned()">✓ Öğrendim</button>
+      <button onclick="nextWord()">Sonraki →</button>
+    </div>
+    <p id="status"></p>
+  </div>
+</section>
+</main>
+<footer>StarEng • A1 Ders 1 • 10 Kelime</footer>
+<script src="./lesson-01.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>

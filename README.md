@@ -1,3 +1,3 @@
-# StarEng A1 Ders 1
+# StarEng A1 Ders 1 FIX
 
-İlk test paketi: 10 kelime.
+Veri dosyası ana dizindedir: lesson-01.js

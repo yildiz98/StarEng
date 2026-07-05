@@ -1,1 +1,35 @@
-let i=0;let done=JSON.parse(localStorage.getItem('stareng_l1')||'[]');function render(){const x=LESSON_01[i];document.getElementById('word').textContent=x.word;document.getElementById('meaning').textContent=x.meaning;document.getElementById('sentence').textContent=x.sentence;document.getElementById('translation').textContent=x.translation;document.getElementById('count').textContent=(i+1)+' / '+LESSON_01.length;document.getElementById('status').textContent=done.includes(x.id)?'✓ Öğrenildi olarak işaretlendi':''}function startLesson(){document.getElementById('home').hidden=true;document.getElementById('study').hidden=false;render()}function goHome(){document.getElementById('study').hidden=true;document.getElementById('home').hidden=false}function nextWord(){i=(i+1)%LESSON_01.length;render()}function prevWord(){i=(i-1+LESSON_01.length)%LESSON_01.length;render()}function markLearned(){const id=LESSON_01[i].id;if(!done.includes(id)){done.push(id);localStorage.setItem('stareng_l1',JSON.stringify(done))}render()}
+let i = 0;
+let done = JSON.parse(localStorage.getItem("stareng_l1") || "[]");
+
+function render(){
+  const x = LESSON_01[i];
+  document.getElementById("word").textContent = x.word;
+  document.getElementById("meaning").textContent = x.meaning;
+  document.getElementById("sentence").textContent = x.sentence;
+  document.getElementById("translation").textContent = x.translation;
+  document.getElementById("count").textContent = (i + 1) + " / " + LESSON_01.length;
+  document.getElementById("status").textContent = done.includes(x.id) ? "✓ Öğrenildi olarak işaretlendi" : "";
+}
+
+function startLesson(){
+  document.getElementById("home").hidden = true;
+  document.getElementById("study").hidden = false;
+  render();
+}
+
+function goHome(){
+  document.getElementById("study").hidden = true;
+  document.getElementById("home").hidden = false;
+}
+
+function nextWord(){ i = (i + 1) % LESSON_01.length; render(); }
+function prevWord(){ i = (i - 1 + LESSON_01.length) % LESSON_01.length; render(); }
+
+function markLearned(){
+  const id = LESSON_01[i].id;
+  if(!done.includes(id)){
+    done.push(id);
+    localStorage.setItem("stareng_l1", JSON.stringify(done));
+  }
+  render();
+}
