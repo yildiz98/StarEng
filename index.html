@@ -9,14 +9,14 @@
 <main>
 <section id="roadmap" class="page active">
   <div class="hero"><span>STAR ENG ÖĞRENME YOLU</span><h1>Adım adım A1 seviyesine ulaş.</h1>
-  <p>Temelden başla; kelimeleri öğren, fiillerle hareket kat, cümle kur ve günlük konuşmaya geç.</p></div>
+  <p>Alfabe, sayılar, renkler, kelimeler, fiiller ve cümle kurma mantığıyla sıfırdan başla.</p></div>
   <div class="path">
-    <button class="step open" onclick="openModule('baslangic')"><b>01</b><div><h2>Başlangıç</h2><p>Alfabe • Sayılar • Renkler • Günler • Aylar • Saat</p></div><em>Başla →</em></button>
-    <button class="step open" onclick="openModule('kelimeler')"><b>02</b><div><h2>Kelimeler</h2><p>Aile • Hayvanlar • Meyveler • Eşyalar • Yiyecekler • Yerler</p></div><em>Aç →</em></button>
-    <button class="step open" onclick="openModule('fiiller')"><b>03</b><div><h2>Fiiller</h2><p>go • come • eat • drink • read • write • want • need...</p></div><em>Aç →</em></button>
-    <button class="step open" onclick="openModule('cumle')"><b>04</b><div><h2>Cümle Kurma</h2><p>Özne + fiil + nesne mantığıyla basit A1 cümleleri</p></div><em>Aç →</em></button>
-    <button class="step open" onclick="openModule('konusma')"><b>05</b><div><h2>Günlük Konuşma</h2><p>Tanışma • Alışveriş • Yol sorma • Restoran • Günlük rutin</p></div><em>Aç →</em></button>
-    <button class="step final" onclick="openModule('final')"><b>06</b><div><h2>A1 Final Testi</h2><p>Kelime • Yazma • Fiil • Cümle • Günlük diyalog</p></div><em>Test →</em></button>
+    <button class="step open" onclick="openModule('baslangic')"><b>01</b><div><h2>Başlangıç</h2><p>Alfabe • Sayılar • Renkler</p></div><em>Başla →</em></button>
+    <button class="step open" onclick="openModule('kelimeler')"><b>02</b><div><h2>Kelimeler</h2><p>Aile • Hayvanlar • Meyveler • Eşyalar</p></div><em>Aç →</em></button>
+    <button class="step open" onclick="openModule('fiiller')"><b>03</b><div><h2>Fiiller</h2><p>be • have • go • eat • drink • read • write...</p></div><em>Aç →</em></button>
+    <button class="step open" onclick="openModule('cumle')"><b>04</b><div><h2>Cümle Kurma</h2><p>I am... • I have... • I like... • I want...</p></div><em>Aç →</em></button>
+    <button class="step open" onclick="openModule('konusma')"><b>05</b><div><h2>Günlük Konuşma</h2><p>Tanışma • Alışveriş • Restoran • Yol sorma</p></div><em>Aç →</em></button>
+    <button class="step final" onclick="openModule('final')"><b>06</b><div><h2>A1 Final Testi</h2><p>Kelime • Yazma • Fiil • Cümle • Diyalog</p></div><em>Test →</em></button>
   </div>
 </section>
 
@@ -27,9 +27,9 @@
 </section>
 
 <section id="study" class="page">
-<button class="back" onclick="openModule('kelimeler')">← Kelimeler</button>
+<button class="back" id="studyBack">← Geri</button>
 <div class="study-card">
-<div class="meta"><span>Ders 1 • Aile ve İnsanlar</span><span id="count"></span></div>
+<div class="meta"><span id="studyTitle"></span><span id="count"></span></div>
 <h1 id="word"></h1><h2 id="meaning"></h2>
 <div class="example"><b id="sentence"></b><span id="translation"></span></div>
 <div class="actions"><button onclick="prevWord()">← Önceki</button><button class="gold" onclick="markLearned()">✓ Öğrendim</button><button onclick="nextWord()">Sonraki →</button></div>
@@ -38,5 +38,14 @@
 </section>
 </main>
 <footer>StarEng • 0'dan A1'e İngilizce Öğrenme Yolu</footer>
-<script src="./lesson-01.js"></script><script src="./app.js"></script>
+<script src="./lesson-01.js"></script>
+<script src="./lesson-02.js"></script>
+<script src="./lesson-alphabet.js"></script>
+<script src="./lesson-numbers.js"></script>
+<script src="./lesson-colors.js"></script>
+<script src="./lesson-animals.js"></script>
+<script src="./lesson-fruits.js"></script>
+<script src="./lesson-objects.js"></script>
+<script src="./lesson-verbs.js"></script>
+<script src="./app.js"></script>
 </body></html>

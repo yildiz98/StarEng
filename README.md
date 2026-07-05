@@ -1,11 +1,14 @@
-# StarEng V4 — Öğrenme Yolu
+# StarEng V6 Aktif İçerik
 
-Ana yapı:
-1. Başlangıç
-2. Kelimeler
-3. Fiiller
-4. Cümle Kurma
-5. Günlük Konuşma
-6. A1 Final Testi
+Bu sürümde aktif modüller:
+- Alfabe
+- Sayılar
+- Renkler
+- Aile ve İnsanlar I
+- Aile ve İnsanlar II
+- Hayvanlar
+- Meyveler
+- Eşyalar
+- Temel Fiiller
 
-Bu sürüm mimari ve arayüz iskeletidir. Mevcut Ders 1 (10 kelime) çalışır durumdadır. Diğer içerikler küçük ders dosyaları halinde aşamalı eklenecektir.
+Eski data dosyaları temizlendi. Veriler küçük ders dosyaları halinde tutulur.
