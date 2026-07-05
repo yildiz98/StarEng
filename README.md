@@ -1,23 +1,26 @@
-# StarEng UI V1
+# StarEng V2 A1 250 Kelime
 
-Bu paket, StarQuiz'ten tamamen bağımsız hazırlanmış StarEng sayfa yapısıdır.
+Bu sürümde A1 için 250 temel kelime sisteme eklendi.
 
-## İçerik
-- Ana sayfa
-- Seviye seçimi
-- Kelime öğrenme alanı
-- Cümle içinde kullanım alanı
-- Mini test alanı
+## Özellikler
+- 250 A1 temel kelime
+- 25 ders
+- Her ders 10 kelime
+- Kelime kartı
+- Örnek İngilizce cümle
+- Türkçe çeviri
+- Öğrendim işaretleme
 - İlerleme paneli
+- Mini test
 
-## Not
-Bu sürümde A1/A2 soru havuzu yoktur. Önce sayfa yapısı ve GitHub Pages yayını test edilir.
+## Yükleme
+ZIP içindeki dosyaları GitHub repo ana dizinine yükleyin.
+Eski dosyaların üzerine yazabilirsiniz.
 
-## GitHub Pages Kurulum
-1. ZIP dosyasını açın.
-2. İçindeki dosyaları repo ana dizinine yükleyin.
-3. Settings > Pages bölümünden:
-   - Source: Deploy from a branch
-   - Branch: main
-   - Folder: /(root)
-4. Save butonuna basın.
+## Kalacak dosyalar
+- index.html
+- style.css
+- app.js
+- data-a1.js
+- README.md
+- .nojekyll
